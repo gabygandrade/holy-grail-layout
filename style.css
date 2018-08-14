@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-basis: 800px;
+}
+
+article {
+  background: #ecf0f1;
+  flex: 4 0 60%
+/*   shorthand for:   */
+/*   flex-grow: 4; */
+/*   flex-shink: 0; */
+/*   flex-basis: 60%; */
+}
+
+nav {
+  flex: 1 1 20%;
+  background: #95a5a6;
+/*   since everything has order: 0, make the nav order -1 to make it go to the left of the article div*/
+  order: -1;
+}
+
+aside {
+  flex: 1 1 20%;
+  background: #3498db;
+}
+
+header, footer {
+  background: #1abc9c;
+  flex-basis: 100px;
+}
+
+@media all and (max-width: 640px){
+  main {
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  
+  nav {
+    order: 0;
+  }
+
+  header, footer {
+    flex-basis: 50px;
+  }
+}
